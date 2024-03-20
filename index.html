@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="preconnect" href="https://fonts.google.com/">
+<link rel="preconnect" href="https://fonts.google.com/" crossorigin> <link
+href="https://fonts.google.com/specimen/Poppins?query=Poppins"
+rel="stylesheet">
+<style>
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="Notes">
+    <p class="image-center">Pemberitahuan</p>
+    <div class="image-center">
+        <img src="0e11db44fb0417c8e1ad3cf49b50b16f.jpg" alt="Deskripsi gambar" width="50%"
+             style="border-radius: 25px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+    </div>
+    <div id="datetime" class="image-center">Konten Awal</div>
+    <br>
+    <div class="image-center">Berbagi ilmu Online</div>
+    <div class="image-center">Bergabung Kegrub</div>
+    <div class="image-center">
+        <button style="cursor: pointer;" onclick="show()">Tekan Disini</button>
+    </div>
+</div>
+<script>
+    function show() {
+        var grupWhatsAppLink = "https://chat.whatsapp.com/Ja3uIfQhTXWGal9oYYplYs"; 
+        window.open(grupWhatsAppLink, "_blank");
+    }
+
+    function updateDateTime() {
+        var elemenDatetime = document.getElementById('datetime');
+        if (elemenDatetime) {
+            elemenDatetime.innerHTML = new Date().toLocaleString('id-ID');
+        } else {
+            console.error("Elemen dengan id 'datetime' tidak ditemukan.");
+        }
+    }
+
+    // Pastikan elemen sudah dimuat sebelum menjalankan skrip
+    document.addEventListener('DOMContentLoaded', function() {
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Untuk menampilkan waktu segera tanpa menunggu 1 detik pertama
+    });
+</script>
+<script src="date.js"></script>
+</body>
+</html>
